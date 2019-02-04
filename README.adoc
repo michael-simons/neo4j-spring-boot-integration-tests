@@ -1,4 +1,4 @@
-= Neo4j Reactive Java Client
+= Neo4j-OGM integration tests with various SDN and Spring Boot versions
 
 image:https://travis-ci.com/michael-simons/neo4j-spring-boot-integration-tests.svg?branch=master["Build Status", link="https://travis-ci.com/michael-simons/neo4j-spring-boot-integration-tests"]
 image:https://img.shields.io/badge/License-Apache%202.0-green.svg[link="http://www.apache.org/licenses/LICENSE-2.0"]
