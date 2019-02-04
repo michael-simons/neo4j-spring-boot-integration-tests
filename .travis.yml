@@ -1,0 +1,44 @@
+# Obviously :)
+language: java
+
+# Be ready for the future
+jdk:
+  - openjdk11
+
+# Only do other on PRs
+branches:
+  only:
+  - master
+
+# Seems reasonable
+cache:
+  directories:
+    - $HOME/.m2
+
+# Find latest release trains:
+# https://spring.io/projects/spring-data#learn
+matrix:
+  include:
+    # Supported combinations
+    - name: "Current Boot combination"
+      env: 
+      - NEO4J_OGM_VERSION=3.1.6
+      - SPRING_DATA_RELEASE_TRAIN_VERSION=Lovelace-SR4
+    - name: "Next Boot combination"
+      env: 
+      - NEO4J_OGM_VERSION=3.2.0-SNAPSHOT
+      - SPRING_DATA_RELEASE_TRAIN_VERSION=Moore-BUILD-SNAPSHOT
+    # Would be nice to have it
+    - name: "Next Neo4j-OGM version with current SDN"
+      env: 
+      - NEO4J_OGM_VERSION=3.2.0-SNAPSHOT
+      - SPRING_DATA_RELEASE_TRAIN_VERSION=Lovelace-SR4
+
+# Clone latest neo4j-ogm, assume it builds and install local snapshot
+before_script:
+  - git clone https://github.com/neo4j/neo4j-ogm;
+  - ./mvnw -f neo4j-ogm/pom.xml -Djacoco.skip=true -Dmaven.javadoc.skip=true -Dcheckstyle.skip -DskipTests=true clean install;
+
+# Execute it
+script:
+  - "./mvnw -Dneo4j-ogm.version=${NEO4J_OGM_VERSION} -Dspring-data-releasetrain.version=${SPRING_DATA_RELEASE_TRAIN_VERSION} clean verify"
