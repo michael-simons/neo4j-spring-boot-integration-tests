@@ -1,6 +1,6 @@
 = Neo4j Reactive Java Client
 
-image:https://travis-ci.org/michael-simons/neo4j-spring-boot-integration-tests.svg?branch=master["Build Status", link="https://travis-ci.org/michael-simons/neo4j-spring-boot-integration-tests"]
+image:https://travis-ci.com/michael-simons/neo4j-spring-boot-integration-tests.svg?branch=master["Build Status", link="https://travis-ci.com/michael-simons/neo4j-spring-boot-integration-tests"]
 image:https://img.shields.io/badge/License-Apache%202.0-green.svg[link="http://www.apache.org/licenses/LICENSE-2.0"]
 
 == What is this?
