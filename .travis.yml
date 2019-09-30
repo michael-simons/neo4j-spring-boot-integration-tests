@@ -22,8 +22,8 @@ matrix:
     # Supported combinations
     - name: "Current Boot combination"
       env: 
-      - NEO4J_OGM_VERSION=3.1.6
-      - SPRING_DATA_RELEASE_TRAIN_VERSION=Lovelace-SR4
+      - NEO4J_OGM_VERSION=3.1.14
+      - SPRING_DATA_RELEASE_TRAIN_VERSION=Lovelace-SR10
     - name: "Next Boot combination"
       env: 
       - NEO4J_OGM_VERSION=3.2.0-SNAPSHOT
@@ -32,7 +32,7 @@ matrix:
     - name: "Next Neo4j-OGM version with current SDN"
       env: 
       - NEO4J_OGM_VERSION=3.2.0-SNAPSHOT
-      - SPRING_DATA_RELEASE_TRAIN_VERSION=Lovelace-SR4
+      - SPRING_DATA_RELEASE_TRAIN_VERSION=Lovelace-SR10
 
 # Clone latest neo4j-ogm, assume it builds and install local snapshot
 before_script:
